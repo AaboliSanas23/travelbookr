@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState,useEffect } from "react";
 import {
   useForm,
   useFieldArray,
@@ -40,7 +40,6 @@ const CountrySelect = ({ label, name, register, error, placeholder, value, onCha
     setIsOpen(false);
     setSearchTerm("");
   };
-
   return (
     <div className="relative">
       <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
@@ -179,7 +178,10 @@ const TravelBookingForm = () => {
     setTheme(newTheme);
     document.documentElement.classList.toggle("dark");
   };
-
+   useEffect(() => {
+    // Ensure dark mode is applied on initial load
+    document.documentElement.classList.add("dark");
+  }, []);
   const {
     register,
     handleSubmit,
