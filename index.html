@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Luxury Travel Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN (no config file needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: Tailwind customization via CDN (no file) -->
+    <script>
+      tailwind.config = {
+         darkMode: "class",  // IMPORTANT
+         content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

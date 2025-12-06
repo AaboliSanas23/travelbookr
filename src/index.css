@@ -1,0 +1,106 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light mode colors */
+:root {
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+}
+
+/* Dark mode colors */
+.dark {
+  --scrollbar-track: #1e293b;
+  --scrollbar-thumb: #475569;
+  --scrollbar-thumb-hover: #64748b;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  transition: background 0.35s ease, color 0.35s ease;
+  background: var(--bg-primary);
+}
+/* Ensure date picker icons are visible in both modes */
+input[type="date"] {
+  color-scheme: light ;
+}
+
+/* Or more specifically */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+/* Luxury scrollbar for both modes */
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #4f46e5, #06b6d4);
+  border-radius: 10px;
+  border: 2px solid var(--scrollbar-track);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #4338ca, #0891b2);
+}
+
+/* For Firefox */
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #4f46e5 var(--scrollbar-track);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+}
+
+.dark ::selection {
+  background-color: rgba(6, 182, 212, 0.4);
+}
+
+/* Remove default focus styles */
+*:focus {
+  outline: none;
+}
+
+/* Smooth transitions for form elements */
+input, select, textarea, button {
+  transition: all 0.2s ease;
+}
